@@ -5,7 +5,23 @@ import { defineConfig } from "eslint/config";
 
 
 export default defineConfig([
-  { files: ["**/*.{js,mjs,cjs,ts,mts,cts}"], plugins: { js }, extends: ["js/recommended"], rules: { "no-unused-vars": "warn" } },
+  {
+    files: ["**/*.{js,mjs,cjs}"],
+    plugins: { js },
+    extends: ["js/recommended"],
+    rules: {
+      "no-unused-vars": "warn",
+      "@typescript-eslint/no-require-imports": "off"
+    }
+  },
+  {
+    files: ["**/*.{ts,mts,cts}"],
+    plugins: { js },
+    extends: ["js/recommended"],
+    rules: {
+      "no-unused-vars": "warn"
+    }
+  },
   { files: ["**/*.{js,mjs,cjs,ts,mts,cts}"], languageOptions: { globals: {...globals.browser, ...globals.node} } },
   tseslint.configs.recommended,
 ]);
