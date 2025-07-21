@@ -31,7 +31,7 @@ jobs:
       DB_HOST: shortline.proxy.rlwy.net
       DB_PORT: 50471
       DB_USER: postgres
-      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      DB_PASSWORD: ropCGaheBshmtwhUeevKJxJzUANWNkOb
       DB_NAME: railway
-      JWT_SECRET: ${{ secrets.JWT_SECRET }}
-      REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }} 
+      JWT_SECRET: ac82e1662cf49d86e87921c8bd343ef6cb7a2ad6f6c51d297254ffa59236512076bb576a7af647c98470ba56a452620f73dbe138875c164bc7bad1fc43917f93
+      REFRESH_TOKEN: 1187fa458cf6c72397070ce7bf886415c4c8202ff7aaf3afd4d7cb7097a69f0e263dcf3777d5690be42b0b1c90089e342806e2c5e9a329247fce0caffb8b6dcc
