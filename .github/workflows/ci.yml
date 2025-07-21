@@ -27,3 +27,11 @@ jobs:
         run: |
           cd backend
           npm test 
+    env:
+      DB_HOST: shortline.proxy.rlwy.net
+      DB_PORT: 50471
+      DB_USER: postgres
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      DB_NAME: railway
+      JWT_SECRET: ${{ secrets.JWT_SECRET }}
+      REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }} 
