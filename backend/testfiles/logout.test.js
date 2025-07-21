@@ -1,6 +1,5 @@
 const request = require('supertest');
 const app = require('../server');
-const jwt = require('jsonwebtoken');
 
 describe('DELETE /logout - PASS', () => {
   it('should log out a user', async () => {
