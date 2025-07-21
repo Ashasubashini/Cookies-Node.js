@@ -1,9 +1,9 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "conn.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node conn.js",
     "lint": "eslint",
     "test": "jest"
   },
