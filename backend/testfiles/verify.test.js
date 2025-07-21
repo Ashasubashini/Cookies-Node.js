@@ -3,7 +3,7 @@ const app = require('../server');
 
 describe('GET /verify - PASS', () => {
   it('should verify user if token is valid', async () => {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0NGM3MDBkLTQzZGQtNDQxYy1hMzA4LWQ1MzFjZDJlMzU1NSIsIm5hbWUiOiJhc2hhIiwiZW1haWwiOiJhc2hhQGVtYWlsLmNvbSIsImlhdCI6MTc1MzA4MTYxNiwiZXhwIjoxNzUzMDg1MjE2fQ.ReIpNt47LRNscg4E5PUxnmgBD_Dn_P_T7CWL2Ck58F0'; 
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ0NGM3MDBkLTQzZGQtNDQxYy1hMzA4LWQ1MzFjZDJlMzU1NSIsIm5hbWUiOiJhc2hhIiwiZW1haWwiOiJhc2hhQGVtYWlsLmNvbSIsImlhdCI6MTc1MzA4OTA5MywiZXhwIjoxNzUzMDkyNjkzfQ.MIVxoNzgpa51viGXgb0Xo8OkTdphr5cI9GapIOSgQ0o'; 
     const res = await request(app)
       .get('/verify')
       .set('Authorization', `Bearer ${token}`);

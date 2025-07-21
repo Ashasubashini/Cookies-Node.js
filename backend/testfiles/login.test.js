@@ -21,6 +21,6 @@ describe('POST /login - FAIL', () => {
         password: 'asha2005'
       });
 
-    expect(res.status).toBe(500); 
+    expect(res.status).toBe(401); 
   });
 });
