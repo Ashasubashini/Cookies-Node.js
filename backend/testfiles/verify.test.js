@@ -1,6 +1,5 @@
 const request = require('supertest');
-const app = require('@server');
-
+const app = require('../server.js');
 
 describe('GET /verify - PASS', () => {
   let accessToken;

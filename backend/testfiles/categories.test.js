@@ -1,6 +1,5 @@
 const request = require('supertest');
-const app = require('@server');
-
+const app = require('../server.js');
 
 describe('GET /categories - PASS', () => {
   it('should return a list of categories', async () => {

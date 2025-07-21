@@ -1,6 +1,5 @@
 const request = require('supertest');
-const app = require('@server');
-
+const app = require('../server.js');
 
 describe('POST /save-clicks - PASS', () => {
   it('should save user click data successfully', async () => {
