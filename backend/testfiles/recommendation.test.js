@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../../server');
+const app = require('@server');
 
 describe('GET /recommendations - PASS', () => {
   it('should return recommended products for user with clicks', async () => {
