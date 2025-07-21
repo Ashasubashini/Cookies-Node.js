@@ -1,4 +1,3 @@
-/* eslint-disable */
 const express = require('express');
 const cors = require('cors');
 const bcrypt = require('./node_modules/bcryptjs/umd');

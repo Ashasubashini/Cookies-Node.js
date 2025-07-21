@@ -1,4 +1,3 @@
-/* eslint-disable */
 const app = require('./server');
 const pool = require('./config/db.config');
 
