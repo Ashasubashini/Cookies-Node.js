@@ -18,7 +18,7 @@ describe('POST /login - FAIL', () => {
     const res = await request(app)
       .post('/login')
       .send({
-        password: 'asha2005'
+        password: 'asha1234'
       });
 
     expect(res.status).toBe(401); 
