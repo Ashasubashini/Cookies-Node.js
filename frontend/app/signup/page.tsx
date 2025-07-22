@@ -17,7 +17,7 @@ const Signup: React.FC = () => {
     setError('');
     setSuccess('');
     try {
-      await axios.post('http://localhost:5000/signup', { name, email, password });
+      await axios.post('http://localhost:5000/register', { name, email, password });
       setSuccess('Registration successful! Redirecting to login...');
       setTimeout(() => router.push('/login'), 1500);
     } catch (err: any) {
