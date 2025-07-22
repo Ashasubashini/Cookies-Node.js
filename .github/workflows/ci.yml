@@ -23,10 +23,15 @@ jobs:
         run: |
           cd backend
           npm run lint
-      - name: Test
+      - name: Run tests with coverage
         run: |
           cd backend
           npm test 
+      - name: Upload coverage to Coveralls
+        if: success()
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
     env:
       DB_HOST: shortline.proxy.rlwy.net
       DB_PORT: 50471
