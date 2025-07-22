@@ -16,7 +16,7 @@ interface Product {
 
 const ProductList: React.FC = () => {
   const params = useParams();
-  const categoryId = params?.categoryId as string;
+  const categoryId = params?.id as string;
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [productClicks, setProductClicks] = useState<Record<string, number>>({});
