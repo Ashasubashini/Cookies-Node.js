@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
+import { SERVER_URI } from '../config';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -15,7 +16,7 @@ const Login: React.FC = () => {
     e.preventDefault();
     setError('');
     try {
-      const res = await axios.post('http://localhost:5000/login', { email, password });
+      const res = await axios.post(`${SERVER_URI}/login`, { email, password });
 
       Cookies.remove('categoryClicks');
       Cookies.remove('productClicks');

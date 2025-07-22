@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
+import { SERVER_URI } from '../config';
 
 interface Category {
   id: number;
@@ -36,11 +37,11 @@ const Home: React.FC = () => {
 
     setUser(userCookie);
 
-    axios.get('http://localhost:5000/categories')
+    axios.get(`${SERVER_URI}/categories`)
       .then(res => setCategories(res.data))
       .catch(() => setCategories([]));
 
-    axios.get(`http://localhost:5000/recommendations?userId=${userId}`)
+    axios.get(`${SERVER_URI}/recommendations?userId=${userId}`)
       .then(res => setRecommended(res.data))
       .catch(() => setRecommended([]));
 
@@ -62,7 +63,7 @@ const Home: React.FC = () => {
     const productClicksCookie = Cookies.get(`productClicks_${userId}`);
     const productClicks = productClicksCookie ? JSON.parse(productClicksCookie) : {};
 
-    axios.post('http://localhost:5000/save-clicks', {
+    axios.post(`${SERVER_URI}/save-clicks`, {
       userId,
       categoryClicks: newCounts,
       productClicks
@@ -94,7 +95,7 @@ const Home: React.FC = () => {
     Cookies.remove('userId');
 
     if (refreshToken) {
-      axios.delete('http://localhost:5000/logout', { data: { refreshToken } })
+      axios.delete(`${SERVER_URI}/logout`, { data: { refreshToken } })
         .catch(err => console.error('Logout error:', err));
     }
 

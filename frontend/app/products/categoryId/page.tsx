@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { useRouter, useParams } from 'next/navigation';
+import { SERVER_URI } from '@/app/config';
 
 interface Product {
   id: number;
@@ -33,7 +34,7 @@ const ProductList: React.FC = () => {
 
     setUser(userCookie);
     setLoading(true);
-    axios.get(`http://localhost:5000/products?categoryId=${categoryId}`)
+    axios.get(`${SERVER_URI}/products?categoryId=${categoryId}`)
       .then(res => setProducts(res.data))
       .catch(() => setProducts([]))
       .finally(() => setLoading(false));
