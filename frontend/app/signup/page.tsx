@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import { SERVER_URI } from '../config';
 
 const Signup: React.FC = () => {
   const [name, setName] = useState('');
@@ -17,7 +18,7 @@ const Signup: React.FC = () => {
     setError('');
     setSuccess('');
     try {
-      await axios.post('http://localhost:5000/register', { name, email, password });
+      await axios.post(`${SERVER_URI}/register`, { name, email, password });
       setSuccess('Registration successful! Redirecting to login...');
       setTimeout(() => router.push('/login'), 1500);
     } catch (err: any) {
