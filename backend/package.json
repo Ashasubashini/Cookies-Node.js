@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "conn.js",
   "scripts": {
-    "dev": "node conn.js",
+    "dev": "nodemon conn.js",
     "lint": "eslint",
     "test": "jest"
   },
