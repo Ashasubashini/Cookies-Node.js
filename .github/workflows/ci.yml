@@ -34,6 +34,16 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token: ${{ secrets.COVERALLS_REPO_TOKEN }}
           path-to-lcov: backend/coverage/lcov.info
+      - name: Deploy to Vercel
+        if: success()  # Only runs if previous steps succeeded
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: ./  # adjust if needed
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
     env:
       DB_HOST: ${{ secrets.DB_HOST }}
       DB_PORT: ${{ secrets.DB_PORT }}
